@@ -27,7 +27,7 @@ uint8_t ParsGCode::ParsGC(uint8_t *GCstr, uint8_t nsym)
             uint8_t num_c=0;
             while (GCstr[i]>='0'&&GCstr[i]<='9')
             {
-                GCNumber=GCNumber+pow10(GCstr[i]-'0', num_c);
+                GCNumber=GCNumber+pow10(num_c)*(GCstr[i]-'0');
                 num_c++;
                 i++;
             }
