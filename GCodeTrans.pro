@@ -17,6 +17,8 @@ SOURCES += main.cpp\
     parsgcode.cpp
 
 HEADERS  += mainwindow.h \
-    parsgcode.h
+    parsgcode.h \
+    datatype.h \
+    mathfunc.h
 
 FORMS    += mainwindow.ui

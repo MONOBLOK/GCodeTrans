@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent):
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QString fn="c:\WPath\PRINTER.3D\пружина.gcode";
+    QString fn="c:/WPath/PRINTER.3D/пружина.gcode";
     QFile GCFile(fn);
     if (GCFile.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -18,7 +18,8 @@ MainWindow::MainWindow(QWidget *parent):
         while (!GCFile.atEnd())
         {
             QByteArray line = GCFile.readLine();
-            GCPars.SetGCString(line.data(), line.size());
+            GCPars.ParsGC((uint8_t*)line.data(), line.size());
+
         }
 
         GCFile.close();
